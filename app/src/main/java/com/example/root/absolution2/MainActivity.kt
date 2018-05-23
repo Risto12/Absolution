@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -17,46 +18,59 @@ import kotlinx.android.synthetic.main.character.view.*
 
 class MainActivity : AppCompatActivity() {
 
+
     var database = DataBase(this);
 
-    val list = ArrayList<NewChar>();
+    fun startCharAct(id: Int){
+        val intent = Intent(this, CharActivity::class.java)
 
-
+        startActivity(intent)
+    }
 
     fun loadChars(){
 
-        database.getCharacters().forEach { list.add(NewChar(it.id,it.name)) }
+        val list = ArrayList<NewChar>();
+
+        database.getCharacters().forEach { list.add(NewChar(it.id,it.name,it.hp,it.mind,it.skill,it.pic,it.gold)) }
+
+        playerList.adapter = CharAdapter(list, this,this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        //this.deleteDatabase("AbsolutionDB");
-        //database.insertData(NewChar(1,"Petteri"))
 
-        loadChars();
+       //this.deleteDatabase("AbsolutionDB");
+
+        loadChars()
 
         playerList.layoutManager = LinearLayoutManager(this)
 
-        playerList.adapter = CharAdapter(list, this)
 
-        //refreshing
         create.setOnClickListener {
-            /*list.removeAll(list);
-            database.getCharacters().forEach { list.add(NewChar(it.id,it.name)) }
-            playerList.adapter = CharAdapter(list, this)
-            */
-            val intent = Intent(this, CharCreation::class.java)
+
+            val intent = Intent(this, CharCreationActivity::class.java)
+
             startActivity(intent)
 
         }
 
+
+
+    }
+
+
+    override fun onRestart() {
+        super.onRestart()
+        loadChars()
     }
 
 }
 
-private class CharAdapter(val items : ArrayList<NewChar>, val context: Context) : RecyclerView.Adapter<ViewHolder>() {
+private class CharAdapter(val items : ArrayList<NewChar>, val context: Context,main: MainActivity) : RecyclerView.Adapter<ViewHolder>() {
+
+   private val main = main;
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -70,7 +84,11 @@ private class CharAdapter(val items : ArrayList<NewChar>, val context: Context) 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder?.character?.text = items.get(position).name;
         // each item on map gets an listener
-        holder?.character?.setOnClickListener { Toast.makeText(context,items.get(position).id.toString(),Toast.LENGTH_LONG).show() }
+        holder?.character?.setOnClickListener {
+            main.startCharAct(2)
+
+        }
+        holder?.character?.setOnLongClickListener {Toast.makeText(context,"hello",Toast.LENGTH_LONG).show(); true}
     }
 
     // Gets the number of animals in the list
@@ -90,3 +108,19 @@ class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 }
 
 
+/* dev
+    override fun onResume() {
+        super.onResume()
+        println("Onresume")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        println("OnStart")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        println("OnSttop")
+    }
+*/
