@@ -14,32 +14,37 @@ class DataBase(context: Context) : SQLiteOpenHelper(context,"AbsolutionDB",null,
 
 
     val primary = "PRIMARY KEY"
-    val itemTable = "item"
+    val itemTable = "item" // not yet implemented
     val charTable = "character"
     val charId = "id"
     val charIdType = "INTEGER"
     val charName =  "name"
     val charNameType ="TEXT"
+    val charTyp = "class"
+    val charTypType = "TEXT"
+    val charLvl = "lvl"
+    val charLvlType = "INTEGER"
     val charHP = "hp"
-    val charHPType = "Integer"
+    val charHPType = "INTEGER"
     val charMind = "mind"
-    val charMindType = "Integer"
+    val charMindType = "INTEGER"
     val charSkill = "skill"
-    val charSkillType = "Integer"
+    val charSkillType = "INTEGER"
     val charPic = "pic"
-    val charPicType ="blob"
+    val charPicType ="BLOB"
     val charGold = "gold"
-    val charGoldType ="Integer"
+    val charGoldType ="INTEGER"
 
+    //not yet implemented
     val bagItem = "item"
-    val bagItemType = "Text"
+    val bagItemType = "TEXT"
 
 
 
 
     override fun onCreate(db: SQLiteDatabase?) {
 
-        val sql : String = "CREATE TABLE $charTable ($charId $charIdType $primary,$charName $charNameType,$charHP $charHPType,$charMind $charMindType,$charSkill $charSkillType,$charPic $charPicType,$charGold $charGoldType)"
+        val sql : String = "CREATE TABLE $charTable ($charId $charIdType $primary,$charName $charNameType, $charTyp $charTypType, $charLvl $charLvlType, $charHP $charHPType,$charMind $charMindType,$charSkill $charSkillType,$charPic $charPicType,$charGold $charGoldType)"
 
         println(sql)
         try {
@@ -66,6 +71,8 @@ class DataBase(context: Context) : SQLiteOpenHelper(context,"AbsolutionDB",null,
         val cv = ContentValues()
 
         cv.put(charName,newChar.name)
+        cv.put(charTyp,newChar.type)
+        cv.put(charLvl,newChar.lvl)
         cv.put(charHP,newChar.hp)
         cv.put(charMind,newChar.mind)
         cv.put(charSkill,newChar.skill)
@@ -105,17 +112,20 @@ class DataBase(context: Context) : SQLiteOpenHelper(context,"AbsolutionDB",null,
             return res;
         }
 
+        res.add(NewChar(result.getInt(0),result.getString(1),result.getString(2),result.getInt(3),result.getInt(4),result.getInt(5),
+                result.getInt(6), null, result.getInt(7)))
+
         while(result.moveToNext()){
-            println(result.getInt(0))
-            res.add(NewChar(result.getInt(0),result.getString(1),result.getInt(2),result.getInt(3),
-                    result.getInt(4), null, result.getInt(6)))
+
+            res.add(NewChar(result.getInt(0),result.getString(1),result.getString(2),result.getInt(3),result.getInt(4),result.getInt(5),
+                    result.getInt(6), null, result.getInt(7)))
         }
 
         db.close()
         return res;
     }
 
-    fun getCharacter(id: Integer) : NewChar{
+    fun getCharacter(id: Int) : NewChar{
 
 
         val db = this.writableDatabase
@@ -128,9 +138,43 @@ class DataBase(context: Context) : SQLiteOpenHelper(context,"AbsolutionDB",null,
         result.moveToNext()
 
         db.close()
-        println(result.getString(1))
+        println(result.getInt(7))
 
-        return NewChar(result.getInt(0),result.getString(1),0,0,0,null,0);
+        return NewChar(result.getInt(0),result.getString(1),result.getString(2),result.getInt(3),result.getInt(4),result.getInt(5),
+                result.getInt(6), null, result.getInt(8))
+
+
+    }
+
+    fun updateCharacter(newChar: NewChar){
+
+
+        val db = this.writableDatabase
+
+        val cv = ContentValues()
+
+
+
+        cv.put(charLvl,newChar.lvl)
+        cv.put(charHP,newChar.hp)
+        cv.put(charMind,newChar.mind)
+        cv.put(charSkill,newChar.skill)
+        cv.put(charGold,newChar.gold)
+
+
+
+        val result = db.update(charTable,cv,"id=${newChar.id}",null)
+
+        if(result == -1){
+            println("ERRROR inserting result")
+        }else{
+            println(result)
+        }
+        db.close()
+
+
+
+
 
 
 

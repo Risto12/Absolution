@@ -27,6 +27,7 @@ class CharCreationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_char_creation)
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        //dev
         val contx = this;
 
         //Take picture
@@ -102,7 +103,7 @@ class CharCreationActivity : AppCompatActivity() {
 
         returnBT.setOnClickListener {
 
-           database.createCharacter(NewChar(0,charNam.text.toString(),hp,mind,skill,null,0))
+           database.createCharacter(NewChar(0,charNam.text.toString(),charType.text.toString(),0,hp,mind,skill,null,0))
             finish()
         }
 

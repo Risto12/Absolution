@@ -21,9 +21,10 @@ class MainActivity : AppCompatActivity() {
 
     var database = DataBase(this);
 
+    //starts activity_char
     fun startCharAct(id: Int){
         val intent = Intent(this, CharActivity::class.java)
-
+        intent.putExtra("id",id)
         startActivity(intent)
     }
 
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         val list = ArrayList<NewChar>();
 
-        database.getCharacters().forEach { list.add(NewChar(it.id,it.name,it.hp,it.mind,it.skill,it.pic,it.gold)) }
+        database.getCharacters().forEach { list.add(NewChar(it.id,it.name,it.type,it.lvl,it.hp,it.mind,it.skill,it.pic,it.gold)) }
 
         playerList.adapter = CharAdapter(list, this,this)
     }
@@ -85,10 +86,10 @@ private class CharAdapter(val items : ArrayList<NewChar>, val context: Context,m
         holder?.character?.text = items.get(position).name;
         // each item on map gets an listener
         holder?.character?.setOnClickListener {
-            main.startCharAct(2)
+            main.startCharAct(items.get(position).id)
 
         }
-        holder?.character?.setOnLongClickListener {Toast.makeText(context,"hello",Toast.LENGTH_LONG).show(); true}
+        holder?.character?.setOnLongClickListener {items.get(position).dev(); true}
     }
 
     // Gets the number of animals in the list
