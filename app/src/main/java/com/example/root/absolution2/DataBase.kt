@@ -6,7 +6,11 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import android.widget.Toast
-
+import android.graphics.Bitmap
+import android.R.attr.bitmap
+import java.io.ByteArrayOutputStream
+import android.graphics.BitmapFactory
+import java.sql.Blob
 
 
 class DataBase(context: Context) : SQLiteOpenHelper(context,"AbsolutionDB",null,1){
@@ -68,6 +72,17 @@ class DataBase(context: Context) : SQLiteOpenHelper(context,"AbsolutionDB",null,
 
         val db = this.writableDatabase
 
+
+            val stream = ByteArrayOutputStream()
+            var pic: ByteArray? = null;
+
+        if(newChar.pic != null) {
+
+            newChar.pic?.compress(Bitmap.CompressFormat.JPEG, 100, stream)
+            pic = stream.toByteArray()
+
+        }
+
         val cv = ContentValues()
 
         cv.put(charName,newChar.name)
@@ -76,7 +91,7 @@ class DataBase(context: Context) : SQLiteOpenHelper(context,"AbsolutionDB",null,
         cv.put(charHP,newChar.hp)
         cv.put(charMind,newChar.mind)
         cv.put(charSkill,newChar.skill)
-        cv.put(charPic,1)
+        cv.put(charPic,pic)
         cv.put(charGold,newChar.gold)
 
 
@@ -94,8 +109,9 @@ class DataBase(context: Context) : SQLiteOpenHelper(context,"AbsolutionDB",null,
 
     fun dellChar(id: Int){
 
+
         val db = this.writableDatabase
-        println(db.execSQL("DELETE FROM $charTable WHERE $charId=$id"))
+        db.execSQL("DELETE FROM $charTable WHERE $charId=$id")
         db.close()
     }
 
@@ -112,13 +128,16 @@ class DataBase(context: Context) : SQLiteOpenHelper(context,"AbsolutionDB",null,
             return res;
         }
 
+
+
+
         res.add(NewChar(result.getInt(0),result.getString(1),result.getString(2),result.getInt(3),result.getInt(4),result.getInt(5),
-                result.getInt(6), null, result.getInt(7)))
+                result.getInt(6), blop(result.getBlob(7)), result.getInt(8)))
 
         while(result.moveToNext()){
 
             res.add(NewChar(result.getInt(0),result.getString(1),result.getString(2),result.getInt(3),result.getInt(4),result.getInt(5),
-                    result.getInt(6), null, result.getInt(7)))
+                    result.getInt(6), blop(result.getBlob(7)), result.getInt(8)))
         }
 
         db.close()
@@ -138,7 +157,7 @@ class DataBase(context: Context) : SQLiteOpenHelper(context,"AbsolutionDB",null,
         result.moveToNext()
 
         db.close()
-        println(result.getInt(7))
+
 
         return NewChar(result.getInt(0),result.getString(1),result.getString(2),result.getInt(3),result.getInt(4),result.getInt(5),
                 result.getInt(6), null, result.getInt(8))
@@ -191,7 +210,17 @@ class DataBase(context: Context) : SQLiteOpenHelper(context,"AbsolutionDB",null,
 
     }
 
+    private fun blop(blop: ByteArray?): Bitmap?{
 
+        if(blop != null) {
+
+            val bm = BitmapFactory.decodeByteArray(blop, 0, blop.size)
+
+            return bm
+        }else{
+            return null
+        }
+    }
 
 
 }

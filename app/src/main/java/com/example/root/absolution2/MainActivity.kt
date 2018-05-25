@@ -37,12 +37,19 @@ class MainActivity : AppCompatActivity() {
         playerList.adapter = CharAdapter(list, this,this)
     }
 
+    fun deleteChar(id: Int){
+
+        database.dellChar(id)
+        Toast.makeText(this,"Deleting...",Toast.LENGTH_LONG).show()
+        loadChars()
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-       //this.deleteDatabase("AbsolutionDB");
+      //this.deleteDatabase("AbsolutionDB");
 
         loadChars()
 
@@ -83,13 +90,19 @@ private class CharAdapter(val items : ArrayList<NewChar>, val context: Context,m
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder?.character?.text = items.get(position).name;
+        holder?.character?.charLayoutText?.setText(items.get(position).name)
+        holder?.character?.charLayoutlvl?.setText(items.get(position).lvl.toString())
+        if(items.get(position).pic != null){
+                    holder?.character?.charLayoutImg?.setImageBitmap(items.get(position).pic)
+                }
+
         // each item on map gets an listener
         holder?.character?.setOnClickListener {
             main.startCharAct(items.get(position).id)
 
         }
-        holder?.character?.setOnLongClickListener {items.get(position).dev(); true}
+        holder?.character?.setOnLongClickListener {
+            main.deleteChar(items.get(position).id); true}
     }
 
     // Gets the number of animals in the list
@@ -102,7 +115,7 @@ private class CharAdapter(val items : ArrayList<NewChar>, val context: Context,m
 
 class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
     // Holds characters
-    val character = view.character;
+    val character = view.charLayoutw;
 
 
 

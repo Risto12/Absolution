@@ -16,7 +16,7 @@ class PlayActivity : AppCompatActivity() {
 
 
         hpPlay.setText("HP:" + intent.getIntExtra("hp",0))
-        playHpSeek.setMax(20)
+        playHpSeek.setMax(intent.getIntExtra("hp",0))
         playHpSeek.setProgress(intent.getIntExtra("hp",0))
         playHpSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
 
@@ -34,7 +34,7 @@ class PlayActivity : AppCompatActivity() {
         })
 
         skillPlay.setText("SKill/Mana:" + intent.getIntExtra("skill",0))
-        playSkillSeek.setMax(20)
+        playSkillSeek.setMax(intent.getIntExtra("skill",0))
         playSkillSeek.setProgress(intent.getIntExtra("skill",0))
         playSkillSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
 
@@ -52,7 +52,7 @@ class PlayActivity : AppCompatActivity() {
         })
 
         mindPlay.setText("Mind:" + intent.getIntExtra("mind",0))
-        playMindSeek.setMax(20)
+        playMindSeek.setMax(intent.getIntExtra("mind",0))
         playMindSeek.setProgress(intent.getIntExtra("mind",0))
         playMindSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
 

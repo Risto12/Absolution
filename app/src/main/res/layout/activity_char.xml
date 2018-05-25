@@ -4,8 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF000000"
+    android:background="@drawable/samurai"
     tools:context=".CharActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#80000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/charGold"
@@ -16,7 +26,7 @@
         android:layout_marginTop="48dp"
         android:text="GOLD:"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="#F9A602"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +38,7 @@
         android:layout_height="34dp"
         android:layout_marginTop="40dp"
         android:text="Skill/Mana:"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintStart_toStartOf="@+id/charMind"
         app:layout_constraintTop_toBottomOf="@+id/charMind" />
 
@@ -49,7 +59,7 @@
         android:layout_marginTop="10dp"
         android:text="PLAYER:TYPE"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="#F9A602"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -63,7 +73,7 @@
         android:layout_marginStart="6dp"
         android:layout_marginTop="88dp"
         android:text="LVL:"
-        android:textColor="@android:color/background_light"
+        android:textColor="#F9A602"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,7 +83,7 @@
         android:layout_height="36dp"
         android:layout_marginTop="40dp"
         android:text="HP:"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/holo_red_light"
         app:layout_constraintStart_toStartOf="@+id/charLVL"
         app:layout_constraintTop_toBottomOf="@+id/charLVL" />
 

@@ -33,7 +33,8 @@ class CharActivity : AppCompatActivity() {
         mind = characterD.mind
         gold = characterD.gold
 
-        nam.setText(characterD.name.toUpperCase() + " - " + characterD.type.toUpperCase())
+        nam.setText("""${characterD.name.toUpperCase()}
+            |${characterD.type.toUpperCase()}""".trimMargin())
         charLVL.setText("LVL:" + lvl)
         // SeekBars && arrows
 

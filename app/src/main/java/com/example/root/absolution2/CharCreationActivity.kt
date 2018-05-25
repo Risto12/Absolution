@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
@@ -18,7 +19,7 @@ class CharCreationActivity : AppCompatActivity() {
     var hp = 0;
     var skill = 0;
     var mind = 0;
-
+    var img: Bitmap? = null;
     var database = DataBase(this);
 
 
@@ -48,6 +49,7 @@ class CharCreationActivity : AppCompatActivity() {
         //SeekBars
 
         skillBar.setMax(10)
+
 
         skillBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -103,7 +105,7 @@ class CharCreationActivity : AppCompatActivity() {
 
         returnBT.setOnClickListener {
 
-           database.createCharacter(NewChar(0,charNam.text.toString(),charType.text.toString(),0,hp,mind,skill,null,0))
+           database.createCharacter(NewChar(0,charNam.text.toString(),charType.text.toString(),0,hp,mind,skill,img,0))
             finish()
         }
 
@@ -117,6 +119,8 @@ class CharCreationActivity : AppCompatActivity() {
                 if(resultCode == Activity.RESULT_OK && data != null){
                     
                     camPic.setImageBitmap(data.extras.get("data") as Bitmap)
+                    img = data.extras.get("data") as Bitmap;
+
                 }
             }else -> {
             Toast.makeText(this,"permission denied", Toast.LENGTH_SHORT).show();
