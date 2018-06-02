@@ -26,12 +26,22 @@ class CharActivity : AppCompatActivity() {
         setContentView(R.layout.activity_char)
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
+
+
         val characterD = database.getCharacter(intent.getIntExtra("id",0))
         lvl = characterD.lvl
         hp = characterD.hp
         skill = characterD.skill
         mind = characterD.mind
         gold = characterD.gold
+
+
+        /* own image as background
+        if(characterD.getDrawable() != null) {
+            CharCons.setBackground(characterD.getDrawable())
+        }
+        */
+
 
         nam.setText("""${characterD.name.toUpperCase()}
             |${characterD.type.toUpperCase()}""".trimMargin())
@@ -110,7 +120,7 @@ class CharActivity : AppCompatActivity() {
 
 
         charGold.setText("GOLD:" + gold)
-        goldBarChar.setMax(2000)
+        goldBarChar.setMax(1000)
         goldBarChar.setProgress(gold)
         goldBarChar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
             override fun onStartTrackingTouch(seekBar: SeekBar?) {

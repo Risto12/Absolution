@@ -160,7 +160,7 @@ class DataBase(context: Context) : SQLiteOpenHelper(context,"AbsolutionDB",null,
 
 
         return NewChar(result.getInt(0),result.getString(1),result.getString(2),result.getInt(3),result.getInt(4),result.getInt(5),
-                result.getInt(6), null, result.getInt(8))
+                result.getInt(6), blop(result.getBlob(7)), result.getInt(8))
 
 
     }

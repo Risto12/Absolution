@@ -1,0 +1,122 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:2:1-28:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/d47361d2d9f2b5090c32b4645229b27a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/0a764d425fadc2dcd0d3a6ff38ec30c4/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/a63d7505a7105648e969de5b5ba30e0d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/408f5b202f47df57f63c2f1d7c856623/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/0bcc01a2ddd0e3fd87b5e6ff206fe0f4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/7d77388c5de3507f7bc10a3039139d10/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/9b831c2989fca24a1067043be7ce8684/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/b81cc4d143af85c570fa2315e52f51b5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/dd67ca45b9c2e405dc0945f4392ba1f1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/e8ee31229679cf941fdf0f33e02a78c7/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/6f10dfedb55a0b9a7e4606b1c6de26ed/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/b0d3ddce7d7df8432093a27ad2754cbb/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/43deb1d5baf1b8065ffc57ec29fc0c57/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:2:1-28:12
+INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:2:1-28:12
+	package
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:3:5-43
+		INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+		INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:2:1-28:12
+		INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:2:1-28:12
+		INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.CAMERA
+ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:7:5-65
+	android:name
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:7:22-62
+application
+ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:9:5-26:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/0a764d425fadc2dcd0d3a6ff38ec30c4/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/0a764d425fadc2dcd0d3a6ff38ec30c4/AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:12:9-41
+	android:roundIcon
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:13:9-54
+	android:icon
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:11:9-36
+	android:allowBackup
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:15:9-40
+activity#com.example.root.absolution2.MainActivity
+ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:16:9-22:20
+	android:name
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:16:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:17:13-21:29
+action#android.intent.action.MAIN
+ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:20:17-77
+	android:name
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:20:27-74
+activity#com.example.root.absolution2.CharCreationActivity
+ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:23:9-58
+	android:name
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:23:19-55
+activity#com.example.root.absolution2.CharActivity
+ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:24:9-50
+	android:name
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:24:19-47
+activity#com.example.root.absolution2.PlayActivity
+ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:25:9-59
+	android:name
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml:25:19-47
+uses-sdk
+INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/d47361d2d9f2b5090c32b4645229b27a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/d47361d2d9f2b5090c32b4645229b27a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/0a764d425fadc2dcd0d3a6ff38ec30c4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/0a764d425fadc2dcd0d3a6ff38ec30c4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/a63d7505a7105648e969de5b5ba30e0d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/a63d7505a7105648e969de5b5ba30e0d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/408f5b202f47df57f63c2f1d7c856623/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/408f5b202f47df57f63c2f1d7c856623/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/0bcc01a2ddd0e3fd87b5e6ff206fe0f4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/0bcc01a2ddd0e3fd87b5e6ff206fe0f4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/7d77388c5de3507f7bc10a3039139d10/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/7d77388c5de3507f7bc10a3039139d10/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/9b831c2989fca24a1067043be7ce8684/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/9b831c2989fca24a1067043be7ce8684/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/b81cc4d143af85c570fa2315e52f51b5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/b81cc4d143af85c570fa2315e52f51b5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/dd67ca45b9c2e405dc0945f4392ba1f1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /root/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/dd67ca45b9c2e405dc0945f4392ba1f1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/e8ee31229679cf941fdf0f33e02a78c7/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/e8ee31229679cf941fdf0f33e02a78c7/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/6f10dfedb55a0b9a7e4606b1c6de26ed/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/6f10dfedb55a0b9a7e4606b1c6de26ed/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/b0d3ddce7d7df8432093a27ad2754cbb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/b0d3ddce7d7df8432093a27ad2754cbb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/43deb1d5baf1b8065ffc57ec29fc0c57/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /root/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/43deb1d5baf1b8065ffc57ec29fc0c57/AndroidManifest.xml:20:5-44
+INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+		INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+		ADDED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml
+		INJECTED from /home/risto/projects/android/Absolution2/app/src/main/AndroidManifest.xml

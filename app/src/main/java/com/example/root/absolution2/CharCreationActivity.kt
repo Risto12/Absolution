@@ -1,13 +1,17 @@
 package com.example.root.absolution2
 
+import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.ActivityInfo
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.widget.SeekBar
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_char_creation.*
@@ -15,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_char_creation.*
 class CharCreationActivity : AppCompatActivity() {
 
     val CAMERA_REQUEST_CODE = 0
-
+    var camGranted = false;
     var hp = 0;
     var skill = 0;
     var mind = 0;
@@ -32,15 +36,25 @@ class CharCreationActivity : AppCompatActivity() {
         val contx = this;
 
         //Take picture
+
         camPic.setOnClickListener {
 
-            val camIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            if(camIntent.resolveActivity(packageManager) != null){
-                startActivityForResult(camIntent, CAMERA_REQUEST_CODE)
+            if(ContextCompat.checkSelfPermission(this,
+                            Manifest.permission.CAMERA)
+                    == PackageManager.PERMISSION_GRANTED) {
+
+                val camIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
+                if (camIntent.resolveActivity(packageManager) != null) {
+                    startActivityForResult(camIntent, CAMERA_REQUEST_CODE)
+                }
+
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        arrayOf(Manifest.permission.CAMERA),CAMERA_REQUEST_CODE
+                )
             }
         }
-
-
 
 
 
@@ -109,6 +123,29 @@ class CharCreationActivity : AppCompatActivity() {
             finish()
         }
 
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int,
+                                            permissions: Array<String>, grantResults: IntArray) {
+        when (requestCode) {
+            CAMERA_REQUEST_CODE -> {
+                // If request is cancelled, the result arrays are empty.
+                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    val camIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
+                    if (camIntent.resolveActivity(packageManager) != null) {
+                        startActivityForResult(camIntent, CAMERA_REQUEST_CODE)
+                    }
+                } else {
+                    Toast.makeText(this,"Camera permission denied",Toast.LENGTH_LONG).show();
+                }
+
+
+            }
+            else -> {
+
+            }
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
