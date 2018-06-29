@@ -10,4 +10,12 @@
  <p>
  -This app is fully working
  </p>  
+ <br>
+ <p>Features:
+ -sqlite database 
+ -Camera
+ <br>
+ <br>
+ <img src="absolutionPic.png" alt="GamePic"/>
+ 
  
