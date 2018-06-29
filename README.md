@@ -13,6 +13,7 @@
  <br>
  <p>Features:
  -sqlite database 
+ <br>
  -Camera
  <br>
  <br>
