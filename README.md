@@ -1,7 +1,7 @@
 # Absolution
 1.0
 
-<p>-Interface for my friends board game made with Kotlin</p>
+<p>-Interface for my friends board game</p>
 <br>
 <p>-This was originally test project to try Android Kotlin development. This project has now stopped and moved to 
  React native platform. 
